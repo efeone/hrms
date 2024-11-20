@@ -30,7 +30,12 @@ class EmployeeAdvance(Document):
 		self.set_pending_amount()
 
 	def on_cancel(self):
+<<<<<<< HEAD
 		self.ignore_linked_doctypes = "GL Entry"
+=======
+		self.ignore_linked_doctypes = ("GL Entry", "Payment Ledger Entry")
+		self.check_linked_payment_entry()
+>>>>>>> 6d19abceb (fix: ignore linked ledger entry record on employee advance cancellation)
 		self.set_status(update=True)
 
 	def set_status(self, update=False):
